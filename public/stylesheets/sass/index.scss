@@ -1,0 +1,313 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Oxygen|Shojumaru');
+$font-stack: 'Oxygen',
+sans-serif;
+$title-font: 'Shojumaru',
+cursive;
+$red: #FF3B3F;
+$vanilla: #a1a487;
+$teal: #b9d3c3;
+$green: #486048;
+$darkgreen: #304830;
+$darkblue : #001818;
+$darkgrey: #787860;
+$grey: #a8a890;
+$lightgrey: #c0c0a8;
+$black: #060b0b;
+$card-height: 12em;
+$card-width: 15em;
+@mixin box-sizing($type) {
+  -webkit-box-sizing: $type;
+  -moz-box-sizing: $type;
+  box-sizing: $type;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: ($size / 16px) * 1rem;
+}
+
+@mixin flexbox {
+  display: -webkit-box; // old
+  display: -moz-box; // old
+  display: -ms-flexbox; // ie
+  display: -webkit-flex; // new
+  display: flex; // new
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -ms-flex: $values;
+  -webkit-flex: $values;
+  flex: $values;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+@mixin columnContainer() {
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+}
+
+@mixin flex-direction($direction,
+$wrap: false) {
+  @if $direction==column {
+    -webkit-flex-direction: vertical;
+    -moz-flex-direction: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    @if $wrap {
+      -webkit-flex-flow: column wrap;
+      flex-flow: column wrap;
+    }
+  }
+  @else {
+    -webkit-flex-direction: horizontal;
+    -moz-flex-direction: horizontal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    @if $wrap {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+html {
+  @inlcude box-sizing("border-box");
+  *,
+  *:before,
+  *:after {
+    @include box-sizing("border-box");
+  }
+  font-family: $font-stack;
+}
+
+header,
+.main,
+.aside,
+.footer {
+  flex: 1 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $title-font;
+  color: $red;
+}
+
+body {
+  background: url("images/japan-night.jpg") fixed center no-repeat;
+  font-family: $font-stack;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  @include flexbox();
+  @include flex-direction('row',
+  true);
+}
+
+.column-container {
+  @include columnContainer();
+}
+
+.banner {
+  min-height: 400px;
+  @include flexbox();
+  @include flex-direction('column');
+  color: $red;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-weight: bold;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+  }
+}
+
+#about {
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  background: $darkgreen;
+  color: $teal;
+}
+
+#top-button {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 20px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  color: $vanilla;
+}
+
+#projects-wrapper {
+  @include flexbox();
+  @include flex-direction('column');
+  padding: 1em;
+}
+
+.projects {
+  border-top: 1px solid $teal;
+  min-height: 400px;
+  padding: 2rem;
+  justify-content: space-between;
+  a {
+    font-weight: bold;
+    color: $teal;
+  }
+  .project-description {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+  }
+  .project-title {
+    opacity: 1;
+    transition: opacity 0.5s linear;
+  }
+  div {
+    @include flexbox();
+    @include flex-direction('column');
+    padding: 1em;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid $teal;
+    width: $card-width;
+    height: $card-height;
+    border-radius: 15px;
+    background: fade-out($black, .4);
+    transition: background-color 0.5s ease;
+    text-align: center;
+  }
+  div:hover {
+    background: $black;
+    .project-description {
+      font-weight: normal;
+      display: block;
+      opacity: 1;
+    }
+    .project-title {
+      display: none;
+      opacity: 0;
+    }
+  }
+  h2 {
+    flex: 1 100%;
+    text-align: center;
+  }
+}
+
+.skills {
+  padding: 2rem;
+  h2 {
+    text-align: center;
+  }
+  .skill-badge {
+    padding: 5px 15px;
+    margin: 5px 10px 0px 10px;
+    background: $lightgrey;
+    font-weight: bold;
+    font-family: $title-font;
+    color: $black;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .skill-badge:hover {
+    color: $red;
+  }
+  div {
+    @include flexbox();
+    @include flex-direction('row');
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+footer {
+  @include flexbox();
+  justify-content: center;
+  background: $black;
+  a {
+    color: $vanilla;
+    padding: 1rem;
+  }
+}
+
+.fa {
+  font-size: 50px;
+}
+
+header {
+  @include flexbox();
+  justify-content: center;
+  background: $darkblue;
+  border-bottom: solid 1px $vanilla;
+}
+
+.navigation {
+  @include flexbox();
+  list-style: none;
+  margin: 0;
+  justify-content: flex-end;
+}
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1.5rem;
+  font-weight: bold;
+  color: $grey;
+}
+
+.navigation a:hover {
+  background: darken($green, 5%);
+}
+
+.navigation .active {
+  background: darken($green, 5%);
+}
+
+.nav-brand {
+  padding: 15px;
+  align-self: center;
+  font-family: $title-font;
+  font-size: 30px;
+  color: $red;
+}
+
+.nav-toggle {
+  cursor: pointer;
+  display: none;
+  align-self: right;
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-between;
+  }
+  .projects {
+    @include columnContainer();
+    justify-content: space-between;
+    align-items: center;
+    div {
+      margin-bottom: 35px;
+    }
+  }
+  .skills>div {
+    @include columnContainer();
+  }
+}

@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css?family=Oxygen|Shojumaru");
+html {
+  @inlcude box-sizing("border-box");
+  font-family: "Oxygen", sans-serif; }
+  html *, html *:before, html *:after {
+    -webkit-box-sizing: "border-box";
+    -moz-box-sizing: "border-box";
+    box-sizing: "border-box"; }
+
+header, .main, .aside, .footer {
+  flex: 1 100%; }
+
+h1, h2, h3 {
+  font-family: "Shojumaru", cursive;
+  color: #FF3B3F; }
+
+body {
+  background: url("images/japan-night.jpg") fixed center no-repeat;
+  font-family: "Oxygen", sans-serif; }
+
+a {
+  text-decoration: none; }
+
+.container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: horizontal;
+  -moz-flex-direction: horizontal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.column-container {
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap; }
+
+.banner {
+  min-height: 400px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: vertical;
+  -moz-flex-direction: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  color: #FF3B3F;
+  justify-content: center;
+  align-items: center; }
+  .banner p {
+    font-weight: bold;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px; }
+
+#about {
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  background: #304830;
+  color: #b9d3c3; }
+
+#top-button {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 20px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  color: #a1a487; }
+
+#projects-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: vertical;
+  -moz-flex-direction: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  padding: 1em; }
+
+.projects {
+  border-top: 1px solid #b9d3c3;
+  min-height: 400px;
+  padding: 2rem;
+  justify-content: space-between; }
+  .projects a {
+    font-weight: bold;
+    color: #b9d3c3; }
+  .projects .project-description {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s linear; }
+  .projects .project-title {
+    opacity: 1;
+    transition: opacity 0.5s linear; }
+  .projects div {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: vertical;
+    -moz-flex-direction: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #b9d3c3;
+    width: 15em;
+    height: 12em;
+    border-radius: 15px;
+    background: rgba(6, 11, 11, 0.6);
+    transition: background-color 0.5s ease;
+    text-align: center; }
+  .projects div:hover {
+    background: #060b0b; }
+    .projects div:hover .project-description {
+      font-weight: normal;
+      display: block;
+      opacity: 1; }
+    .projects div:hover .project-title {
+      display: none;
+      opacity: 0; }
+  .projects h2 {
+    flex: 1 100%;
+    text-align: center; }
+
+.skills {
+  padding: 2rem; }
+  .skills h2 {
+    text-align: center; }
+  .skills .skill-badge {
+    padding: 5px 15px;
+    margin: 5px 10px 0px 10px;
+    background: #c0c0a8;
+    font-weight: bold;
+    font-family: "Shojumaru", cursive;
+    color: #060b0b;
+    border-radius: 5px;
+    cursor: pointer; }
+  .skills .skill-badge:hover {
+    color: #FF3B3F; }
+  .skills div {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: horizontal;
+    -moz-flex-direction: horizontal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
+
+footer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  background: #060b0b; }
+  footer a {
+    color: #a1a487;
+    padding: 1rem; }
+
+.fa {
+  font-size: 50px; }
+
+header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  background: #001818;
+  border-bottom: solid 1px #a1a487; }
+
+.navigation {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  justify-content: flex-end; }
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1.5rem;
+  font-weight: bold;
+  color: #a8a890; }
+
+.navigation a:hover {
+  background: #3d513d; }
+
+.navigation .active {
+  background: #3d513d; }
+
+.nav-brand {
+  padding: 15px;
+  align-self: center;
+  font-family: "Shojumaru", cursive;
+  font-size: 30px;
+  color: #FF3B3F; }
+
+.nav-toggle {
+  cursor: pointer;
+  display: none;
+  align-self: right; }
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-between; }
+
+  .projects {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center; }
+    .projects div {
+      margin-bottom: 35px; }
+
+  .skills > div {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap; } }
+
+/*# sourceMappingURL=index.css.map */
