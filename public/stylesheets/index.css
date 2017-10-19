@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Oxygen|Shojumaru");
+body {
+  min-height: 75rem;
+  font-family: "Oxygen", sans-serif;
+}
+
+.header {
+  background: #001818;
+  color: #b9d3c3;
+  padding: 2rem;
+}
+
+.header-wrap {
+  background: url("https://wallpaperscraft.com/image/japan_street_lights_59294_1920x1080.jpg") no-repeat center center fixed;
+  color: #b9d3c3;
+}
+
+.navbar-brand {
+  color: #FF3B3F;
+  font-family: "Shojumaru", cursive;
+}
+
+#top-button {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 20px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  color: #060b0b;
+  font-weight: bold;
+}
+
+.quote-image-tiles {
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
