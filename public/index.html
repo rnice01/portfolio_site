@@ -49,6 +49,10 @@
     "Coding, working out"
   end
 
+  def geek_out?(thing)
+    ["Star Wars", "ReactJS", "Ruby", "Rails"].include(thing)?
+  end
+
   def eat(food)
     return "Yum!" if food.type === "Japanese"
     "That was pretty good"
@@ -62,7 +66,7 @@
     "1 and another in the oven"
   end
 
-  def foundation?
+  def foundation
     "Jesus"
   end
 end
@@ -121,7 +125,24 @@ end
             <div class="col-md-5">
                 <h3>A Study in Ruby</h3>
                 <h4>Postagram</h4>
-                <p>The Ruby and Rails community is amazing, I have learned so many great things about Software Development from peple like Sandi Metz and Peter Cooper. Furthermore, I love the Ruby language, so creating a Rails project was a no brainer for me. There's something about forums that I just really enjoy: there's drama (a little too much at times), laughter, wisdom being passed down, and people just being able to share their interests with others. The styling is done with Bootstrap 3</p>
+                <p>The Ruby and Rails communities are amazing,
+                  I have learned so many great things about Software Development
+                  from peple like Sandi Metz, Peter Cooper, and the folks at Thoughbot.
+                  Furthermore, I love the Ruby language, so creating a Rails project
+                  was a no brainer for me. I was following a couple of different
+                  tutorials to get the project on its feet, the primary one being
+                  Rails Tutorial by Michael Hartl. Once I had the user accounts implemented
+                  I was excited to venture off on my own. Some feature I have included: authenticated
+                  users can create posts and like posts, all users can view other users and posts. Posts
+                  are displayed on the posts overview page by most recent and most liked. So far the likes
+                  feature is one that I enjoyed the most with this app, it uses polymorphic associations
+                  so I can have users like just about anything I want in the app. I blogged about my experience
+                  <a href="https://medium.com/@rnice4christ/i-added-a-likes-feature-to-my-app-the-wrong-way-part-1-polymorphic-associations-ff94484c4634">
+                    here</a>. I also explored boosting performance of my app by using Rails' super easy to use caching, which
+                    also gives me the benefit of keeping my database provisioned on Heroku getting hit with a lot of queries.
+                    It was a great experience overall and I'm excited to be working on more Rails applications and continuing
+                    to add new features to this one.
+                </p>
                 <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
