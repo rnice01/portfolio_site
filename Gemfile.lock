@@ -19,8 +19,5 @@ DEPENDENCIES
   rack (= 2.0.3)
   sass
 
-RUBY VERSION
-   ruby 2.3.1p112
-
 BUNDLED WITH
    1.15.4
